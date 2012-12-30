@@ -42,49 +42,50 @@
     <div class="twelve columns">
       <div class="row">
         <div class="three columns">
-          <h4 class="subheader">Postcongress <small><a href="http://postcongress.io" target="_blank">url</a></small></h4>
+          <h4 class="subheader">Donately <small><a href="http://donately.com" target="_blank">url</a></small></h4>
           <p class="label">2012</p>
         </div>
 
         <div class="nine columns">
           <div class="row">
             <div class="twelve columns">
-              <img src="images/postcongress/1.jpg">
+              <img src="images/donately/1.jpg">
             </div>
             <div class="twelve columns">
-              <img src="images/postcongress/2.jpg">
+              <img src="images/donately/2.gif">
             </div>
           </div>
 
           <div class="row">
             <div class="nine columns project-description">
               <p>
-                <a href="http://postcongress.io">Postcongress</a> lets you send a real postcard to your senator from the convenience of your computer. It identifies your representatives by your zip code, fills in their mailing address, and lets you craft the perfect message. Upon completion, it programmatically prints and mails the real postcard.
+                <a href="http://donately.com">Donately</a> is a software platform for accepting donations. It is owned and operated by <a href="http://fiftyandfifty.org">Fifty &amp; Fifty</a>.
+              <p>
+
+              <p>
+                I was brought on to evaluate <a href="http://donately.com">Donately</a> and determine what direction it should take next. With my feedback, we decided to build out an API. Once completed we would design a new interface to consume that API.
               </p>
 
               <p>
-                I built <a href="http://postcongress.io">Postcongress</a> after suggestions and encouragement from the <a href="http://news.ycombinator.com">Hacker News</a> community - specifically in response to my creation of <a href="fjunkmail.html">F Junk Mail</a>. I used the F Junk Mail code as a platform for building Postcongress. I made adjustments where necessary, created a partiotic design, and added some smart code for determing your representative by zip code. I launched the following weekend. The response was <a href="http://news.ycombinator.com/item?id=4432851">great</a>.
+                We did just that. I directed and did the majority of the programming, plus added additional features, and maintained the old site for current clients.
               </p>
-
-              <p>
-                Since then, it has been a powerful tool for both individuals and advocacy groups to get their message out to Federal Representatives.
-              </p>
-
+              
               <p>Technologies include:</p>
 
               <ul class="disc">
-                <li>Sinatra</li>
+                <li>Ruby on Rails</li>
+                <li>RESTful API</li>
                 <li>Angular.js</li>
+                <li>PostgreSQL</li>
+                <li>Authorize.net</li>
                 <li>Stripe</li>
-                <li>Sincerely API</li>
-                <li>Sunlight Congress API</li>
-                <li>Redis</li>
+                <li>PayPal</li>
+                <li>Heroku</li>
               </ul>
             </div>
           </div>
         </div>
       </div>
-
       <div class="row similar-projects">
         <div class="three columns">
           <h5 class="subheader">Similar Projects</h5>
@@ -99,17 +100,10 @@
                 </a>
               </div>
             </div>
-            <div class="four columns">
-              <div class="panel text-center">
-                <a href="donately.html">
-                  <img src="images/donately-api.gif" />
-                </a>
-              </div>
-            </div>
             <div class="four end columns">
               <div class="panel text-center">
-                <a href="fjunkmail.html">
-                  <img src="images/fjunkmail.jpg" />
+                <a href="postcongress.html">
+                  <img src="images/postcongress.jpg" />
                 </a>
               </div>
             </div>
@@ -138,6 +132,6 @@
       var s = document.getElementsByTagName('script')[0];
       s.parentNode.insertBefore(t, s);
     })();
-  </script>  
+  </script>
 </body>
 </html>
