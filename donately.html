@@ -1,109 +1,71 @@
-<!DOCTYPE html>
+---
+layout: port
+---
 
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8" />
+<div class="row">
+  <div class="three columns">
+    <h4 class="subheader">Donately <small><a href="http://donately.com" target="_blank">url</a></small></h4>
+    <p class="label">2012</p>
+  </div>
 
-  <!-- Set the viewport width to device width for mobile -->
-  <meta name="viewport" content="width=device-width" />
-
-  <title>Donately - Scott Motte - Programming &amp; Consulting for Startups</title>
-  <meta name="description" content="Developer and Startup Consultant">
-
-  <!-- Included CSS Files (Compressed) -->
-  <link rel="stylesheet" href="stylesheets/foundation.min.css">
-  <link rel="stylesheet" href="stylesheets/app.css">
-
-  <script src="javascripts/modernizr.foundation.js"></script>
-</head>
-<body>
-  <header>
+  <div class="nine columns">
     <div class="row">
-      <div class="three columns">
-        <p>
-          <a class="home" href="index.html">Scott Motte</a>
-        </p>
+      <div class="twelve columns">
+        <img src="images/donately/1.jpg">
       </div>
-      <div class="two columns">
-        <p>Programming &amp; Consulting
-      </div>
-      <div class="seven columns">
-        <p class="text-right">
-          <!-- $3,500 a week. &nbsp;&nbsp;&nbsp; -->
-          <a class="radius secondary button small" href="mailto:scott@scottmotte.com">Get in Touch &rarr;</a>
-        </p>
+      <div class="twelve columns">
+        <img src="images/donately/2.gif">
       </div>
     </div>
-  </header>
 
-  <div class="row">
-    <div class="twelve columns">
-      <div class="row">
-        <div class="three columns">
-          <h4 class="subheader">Donately <small><a href="http://donately.com" target="_blank">url</a></small></h4>
-          <p class="label">2012</p>
-        </div>
+    <div class="row">
+      <div class="nine columns project-description">
+        <p>
+          <a href="http://donately.com">Donately</a> is a software platform for accepting donations. It is owned and operated by <a href="http://fiftyandfifty.org">Fifty &amp; Fifty</a>.
+        <p>
 
-        <div class="nine columns">
-          <div class="row">
-            <div class="twelve columns">
-              <img src="images/donately/1.jpg">
-            </div>
-            <div class="twelve columns">
-              <img src="images/donately/2.gif">
-            </div>
-          </div>
+        <p>
+          I was brought on to evaluate <a href="http://donately.com">Donately</a> and determine what direction it should take next. With my feedback, we decided to build out an API. Once completed we would design a new interface to consume that API.
+        </p>
 
-          <div class="row">
-            <div class="nine columns project-description">
-              <p>
-                <a href="http://donately.com">Donately</a> is a software platform for accepting donations. It is owned and operated by <a href="http://fiftyandfifty.org">Fifty &amp; Fifty</a>.
-              <p>
+        <p>
+          We did just that. I directed and did the majority of the programming, plus added additional features, and maintained the old site for current clients.
+        </p>
+        
+        <p>Technologies include:</p>
 
-              <p>
-                I was brought on to evaluate <a href="http://donately.com">Donately</a> and determine what direction it should take next. With my feedback, we decided to build out an API. Once completed we would design a new interface to consume that API.
-              </p>
+        <ul class="disc">
+          <li>Ruby on Rails</li>
+          <li>RESTful API</li>
+          <li>Angular.js</li>
+          <li>PostgreSQL</li>
+          <li>Authorize.net</li>
+          <li>Stripe</li>
+          <li>PayPal</li>
+          <li>Heroku</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row similar-projects">
+  <div class="three columns">
+    <h5 class="subheader">Similar Projects</h5>
+  </div>
 
-              <p>
-                We did just that. I directed and did the majority of the programming, plus added additional features, and maintained the old site for current clients.
-              </p>
-              
-              <p>Technologies include:</p>
-
-              <ul class="disc">
-                <li>Ruby on Rails</li>
-                <li>RESTful API</li>
-                <li>Angular.js</li>
-                <li>PostgreSQL</li>
-                <li>Authorize.net</li>
-                <li>Stripe</li>
-                <li>PayPal</li>
-                <li>Heroku</li>
-              </ul>
-            </div>
-          </div>
+  <div class="nine columns">
+    <div class="row">
+      <div class="four columns">
+        <div class="panel text-center">
+          <a href="kony.html">
+            <img src="images/kony.gif" />
+          </a>
         </div>
       </div>
-      <div class="row similar-projects">
-        <div class="three columns">
-          <h5 class="subheader">Similar Projects</h5>
-        </div>
-
-        <div class="nine columns">
-          <div class="row">
-            <div class="four columns">
-              <div class="panel text-center">
-                <a href="kony.html">
-                  <img src="images/kony.gif" />
-                </a>
-              </div>
-            </div>
-            <div class="four columns">
-              <div class="panel text-center">
-                <a href="worldvisionacts.html">
-                  <img src="images/worldvisionacts.gif" />
+      <div class="four columns">
+        <div class="panel text-center">
+          <a href="worldvisionacts.html">
+            <img src="images/worldvisionacts.gif" />
                 </a>
               </div>
             </div>
@@ -117,28 +79,4 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  
-  <!-- Included JS Files (Compressed) -->
-  <script src="javascripts/jquery.js"></script>
-  <script src="javascripts/foundation.min.js"></script>
-  
-  <!-- Initialize JS Plugins -->
-  <script src="javascripts/app.js"></script>
 
-  <script type="text/javascript">
-    var _gauges = _gauges || [];
-    (function() {
-      var t   = document.createElement('script');
-      t.type  = 'text/javascript';
-      t.async = true;
-      t.id    = 'gauges-tracker';
-      t.setAttribute('data-site-id', '50dc854e613f5d2a3d000076');
-      t.src = '//secure.gaug.es/track.js';
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(t, s);
-    })();
-  </script>
-</body>
-</html>

@@ -1,154 +1,92 @@
-<!DOCTYPE html>
+---
+layout: port
+---
 
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8" />
+<div class="row">
+  <div class="three columns">
+    <h4 class="subheader">Donately Form.js <small><a href="http://dntly.com/api#form-js" target="_blank">url</a></small></h4>
+    <p class="label">2012</p>
+  </div>
 
-  <!-- Set the viewport width to device width for mobile -->
-  <meta name="viewport" content="width=device-width" />
-
-  <title>Donately Form.js - Scott Motte - Programming &amp; Consulting for Startups</title>
-  <meta name="description" content="Developer and Startup Consultant">
-
-  <!-- Included CSS Files (Compressed) -->
-  <link rel="stylesheet" href="stylesheets/foundation.min.css">
-  <link rel="stylesheet" href="stylesheets/app.css">
-
-  <script src="javascripts/modernizr.foundation.js"></script>
-</head>
-<body>
-  <header>
+  <div class="nine columns">
     <div class="row">
-      <div class="three columns">
-        <p>
-          <a class="home" href="index.html">Scott Motte</a>
-        </p>
-      </div>
-      <div class="two columns">
-        <p>Programming &amp; Consulting
-      </div>
-      <div class="seven columns">
-        <p class="text-right">
-          <!-- $3,500 a week. &nbsp;&nbsp;&nbsp; -->
-          <a class="radius secondary button small" href="mailto:scott@scottmotte.com">Get in Touch &rarr;</a>
-        </p>
+      <div class="twelve columns">
+        <img src="images/donately-form-js/1.gif">
       </div>
     </div>
-  </header>
 
-  <div class="row">
-    <div class="twelve columns">
-      <div class="row">
-        <div class="three columns">
-          <h4 class="subheader">Donately Form.js <small><a href="http://dntly.com/api#form-js" target="_blank">url</a></small></h4>
-          <p class="label">2012</p>
-        </div>
+    <div class="row">
+      <div class="nine columns project-description">
+        <p>
+          <a href="http://dntly.com/api#form-js">Donately Form.js</a> lets you put a secure donation form on any webpage. It can be embedded with only a single line of code and uses a secure connection.
+        <p>
 
-        <div class="nine columns">
-          <div class="row">
-            <div class="twelve columns">
-              <img src="images/donately-form-js/1.gif">
-            </div>
-          </div>
+        <code>
+          &lt;script src='https://www.dntly.com/assets/js/v1/form.js' data-donately-id='11'&gt;&lt;/script&gt;
+        </code>
+        <p>
+          (You can see a live example of this Form.js code embedded at the bottom of this page.)
+        </p>
 
-          <div class="row">
-            <div class="nine columns project-description">
-              <p>
-                <a href="http://dntly.com/api#form-js">Donately Form.js</a> lets you put a secure donation form on any webpage. It can be embedded with only a single line of code and uses a secure connection.
-              <p>
+        <p>
+          I proposed the idea of Donately Form.js, the Donately team and I worked out the merits and details of creating such a tool, and we got to work creating it. I handled all the programming - solving multiple challenges in building such a tool and working closely with a UI designer that directed the design and styling.
+        </p>
 
-              <code>
-                &lt;script src='https://www.dntly.com/assets/js/v1/form.js' data-donately-id='11'&gt;&lt;/script&gt;
-              </code>
-              <p>
-                (You can see a live example of this Form.js code embedded at the bottom of this page.)
-              </p>
+        <p>
+          It is proving a powerful tool - especially for 501(3)(c) organizations that want to accept donations from their main website, but don't have the development team to implement a custom donation form. Additionally, by using Donately Form.js those organizations glean a great deal of metadata about their donors provided by <a href="http://donately.com">Donately</a>.
+        </p>
+        
+        <p>Technologies include:</p>
 
-              <p>
-                I proposed the idea of Donately Form.js, the Donately team and I worked out the merits and details of creating such a tool, and we got to work creating it. I handled all the programming - solving multiple challenges in building such a tool and working closely with a UI designer that directed the design and styling.
-              </p>
+        <ul class="disc">
+          <li>Heavy use of JavaScript</li>
+          <li>Custom iFrame</li>
+          <li>SSL</li>
+          <li>HTML5 postMessage</li>
+          <li>Authorize.net</li>
+          <li>Stripe</li>
+          <li>PayPal</li>
+          <li>Heroku</li>
+        </ul>
 
-              <p>
-                It is proving a powerful tool - especially for 501(3)(c) organizations that want to accept donations from their main website, but don't have the development team to implement a custom donation form. Additionally, by using Donately Form.js those organizations glean a great deal of metadata about their donors provided by <a href="http://donately.com">Donately</a>.
-              </p>
-              
-              <p>Technologies include:</p>
+        <hr/>
 
-              <ul class="disc">
-                <li>Heavy use of JavaScript</li>
-                <li>Custom iFrame</li>
-                <li>SSL</li>
-                <li>HTML5 postMessage</li>
-                <li>Authorize.net</li>
-                <li>Stripe</li>
-                <li>PayPal</li>
-                <li>Heroku</li>
-              </ul>
+        <p>Below is the embedded Form.js. You can try it out, but use a fake credit card number - unless you really want to send me a payment.</p>
 
-              <hr/>
+        <script src='https://www.dntly.com/assets/js/v1/form.js' data-donately-id='11'></script>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row similar-projects">
+  <div class="three columns">
+    <h5 class="subheader">Similar Projects</h5>
+  </div>
 
-              <p>Below is the embedded Form.js. You can try it out, but use a fake credit card number - unless you really want to send me a payment.</p>
-
-              <script src='https://www.dntly.com/assets/js/v1/form.js' data-donately-id='11'></script>
-            </div>
-          </div>
+  <div class="nine columns">
+    <div class="row">
+      <div class="four columns">
+        <div class="panel text-center">
+          <a href="kony.html">
+            <img src="images/kony.gif" />
+          </a>
         </div>
       </div>
-      <div class="row similar-projects">
-        <div class="three columns">
-          <h5 class="subheader">Similar Projects</h5>
+      <div class="four columns">
+        <div class="panel text-center">
+          <a href="worldvisionacts.html">
+            <img src="images/worldvisionacts.gif" />
+          </a>
         </div>
-
-        <div class="nine columns">
-          <div class="row">
-            <div class="four columns">
-              <div class="panel text-center">
-                <a href="kony.html">
-                  <img src="images/kony.gif" />
-                </a>
-              </div>
-            </div>
-            <div class="four columns">
-              <div class="panel text-center">
-                <a href="worldvisionacts.html">
-                  <img src="images/worldvisionacts.gif" />
-                </a>
-              </div>
-            </div>
-            <div class="four end columns">
-              <div class="panel text-center">
-                <a href="donately.html">
-                  <img src="images/donately-api.gif" />
-                </a>
-              </div>
-            </div>
-          </div>
+      </div>
+      <div class="four end columns">
+        <div class="panel text-center">
+          <a href="donately.html">
+            <img src="images/donately-api.gif" />
+          </a>
         </div>
       </div>
     </div>
   </div>
-  
-  <!-- Included JS Files (Compressed) -->
-  <script src="javascripts/jquery.js"></script>
-  <script src="javascripts/foundation.min.js"></script>
-  
-  <!-- Initialize JS Plugins -->
-  <script src="javascripts/app.js"></script>
+</div>
 
-  <script type="text/javascript">
-    var _gauges = _gauges || [];
-    (function() {
-      var t   = document.createElement('script');
-      t.type  = 'text/javascript';
-      t.async = true;
-      t.id    = 'gauges-tracker';
-      t.setAttribute('data-site-id', '50dc854e613f5d2a3d000076');
-      t.src = '//secure.gaug.es/track.js';
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(t, s);
-    })();
-  </script>
-</body>
-</html>
