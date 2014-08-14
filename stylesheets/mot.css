@@ -1,0 +1,80 @@
+/* mot | http://mot.la */
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 1.2rem;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Georgia, "Times New Roman", Times, sans-serif;
+  border: 33px solid white;
+  background-color: white;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid gray;
+  height: 1px;
+  margin: 1.2em 0 1.2em 0;
+  width: 90%;
+}
+
+h1 {
+  margin: 0.4em 0 1.3em 0;
+}
+
+p {
+  line-height: 1.4em;
+  margin: 0.9em 0 0.9em 0;
+}
+
+h2 {
+  line-height: 1.2em;
+  margin: 0.4em 0 0.4em 0;
+  font-size: 1.2em;
+}
+
+h5 {
+  font-size: 0.8em;
+  margin: 0.4em 0 0.4em 0;
+}
+
+time {
+  background: black;
+  color: white;
+  font-size: 0.8em;
+}
+
+img {
+  outline: 0; 
+  max-width: 100%; 
+  height: auto;
+}
+
+a img {
+  border-bottom: 4px solid blue;
+}
+
+a:visited img {
+  border-color: purple;
+}
+
+ul {
+  margin: 0 0 0 1.2em;
+}
+
+.kook li {
+  float: left;
+  line-height: 0;
+  list-style: none;
+}
+
+.kook li img {
+  width: 200px;
+}
+
+
+
