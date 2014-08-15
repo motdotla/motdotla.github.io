@@ -3,10 +3,10 @@
 * {
   margin: 0;
   padding: 0;
-  font-size: 1.2rem;
 }
 
 body {
+  font-size: 1.2rem;
   margin: 0;
   padding: 0;
   font-family: Georgia, "Times New Roman", Times, sans-serif;
@@ -66,8 +66,17 @@ ul {
   margin: 0 0 0 1.2em;
 }
 
+footer {
+  text-align: right;
+  border-top: 40px solid white;
+  font-size: 0.8em;
+}
+
+footer a {
+}
+
 .kook li {
-  float: left;
+  display: inline-block;
   line-height: 0;
   list-style: none;
 }
@@ -75,6 +84,4 @@ ul {
 .kook li img {
   width: 200px;
 }
-
-
 
