@@ -1,0 +1,36 @@
+---
+layout: default
+title: r301: 301 Redirect Old Domain to New Domain
+---
+
+<time>2014-08-17</time>
+
+<h2>r301: Redirect Old Domain to New Domain</h2>
+
+<img src="images/r301.gif"/>
+
+<p>
+  I needed a way to redirect my old domain to a new domain. I didn't find a solution I really liked so I built my own - <a href="http://github.com/scottmotte/r301">r301</a>. 
+</p>
+
+<p>
+  I looked at some options like the following.
+</p>
+
+<ul>
+  <li>
+  <a href="https://github.com/nquinlan/jekyll-pageless-redirects">jekyll page redirects</a>
+  </li>
+  <li>
+    <a href="http://css-tricks.com/snippets/htaccess/301-redirects/">using an htaccess file</a>
+  </li>
+  <li>
+    <a href="http://stackoverflow.com/questions/5855241/redirect-to-same-path-on-new-domain">using a php script</a>.
+  </li>
+</ul>
+
+<p>The options were good for certain scenarios, but I just wanted to quickly switch my entire domain over. Ideally, I wish this could be done via DNS, but it cannot.</p>
+
+<p><a href="https://github.com/scottmotte/r301">r301</a> let's you quickly 301 permanently redirect from your old domain to your new domain.</p>
+
+<p>It is a small application that you configure and deploy to heroku in just 5 minutes. I hope you find it useful. Instructions for configuration and deployment are in the <a href="https://github.com/scottmotte/r301">README</a>.</p>
