@@ -31,6 +31,14 @@ p {
   margin: 0.9em 0 0.9em 0;
 }
 
+blockquote {
+  font-size: 0.8em;
+  font-style: italic;
+  padding: 0 20px 0 20px;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+}
+
 h2 {
   line-height: 1.2em;
   margin: 0.4em 0 0.4em 0;
