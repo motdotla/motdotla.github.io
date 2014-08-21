@@ -1,6 +1,6 @@
-# scottmotte.com
+# mot.la
 
-The source code for [http://scottmotte.com](http://scottmotte.com)
+The source code for [http://mot.la](http://mot.la)
 
 ## Startup Shirts
 
