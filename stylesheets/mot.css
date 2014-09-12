@@ -12,6 +12,13 @@ body {
   font-family: Georgia, "Times New Roman", Times, sans-serif;
   border: 33px solid white;
   background-color: white;
+  text-align: center;
+}
+
+.content {
+  margin: 0 auto;
+  max-width: 680px;
+  text-align: left;
 }
 
 hr {
@@ -60,14 +67,6 @@ img {
   outline: 0; 
   max-width: 100%; 
   height: auto;
-}
-
-a img {
-  border-bottom: 4px solid blue;
-}
-
-a:visited img {
-  border-color: purple;
 }
 
 ul {
