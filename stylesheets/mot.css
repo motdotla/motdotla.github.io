@@ -73,6 +73,11 @@ ul {
   margin: 0 0 0 1.2em;
 }
 
+ul li {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
 footer {
   text-align: right;
   border-top: 40px solid white;
