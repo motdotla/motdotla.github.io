@@ -2,6 +2,13 @@
 
 The source code for [http://mot.la](http://mot.la)
 
+## Development Setup
+
+```
+gem install jekyll
+jekyll server
+```
+
 ## Startup Shirts
 
 I collect many startup shirts by the nature of my awesome job at [SendGrid](http://sendgrid.com). I can't wear them all so I've started giving them away.
