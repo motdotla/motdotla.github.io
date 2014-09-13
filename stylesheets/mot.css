@@ -46,6 +46,16 @@ blockquote {
   filter: alpha(opacity=80);
 }
 
+pre {
+  padding: 16px;
+  overflow: auto;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+  margin-bottom: 16px;
+  font: monospace;
+  display: block;
+}
+
 h2 {
   line-height: 1.2em;
   margin: 0.4em 0 0.4em 0;
