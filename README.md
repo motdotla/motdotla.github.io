@@ -1,5 +1,7 @@
 # mot.la
 
+<img src="https://raw.githubusercontent.com/motdotla/motdotla.github.com/master/motdotla.github.com.gif" alt="motdotla.github.com" align="right" width="320" />
+
 The source code for [http://mot.la](http://mot.la)
 
 ## Development Setup
