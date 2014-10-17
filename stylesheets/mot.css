@@ -17,7 +17,7 @@ body {
 
 .content {
   margin: 0 auto;
-  max-width: 680px;
+  max-width: 620px;
   text-align: left;
 }
 
@@ -26,7 +26,6 @@ hr {
   border-top: 1px solid gray;
   height: 1px;
   margin: 1.2em 0 1.2em 0;
-  width: 90%;
 }
 
 h1 {
@@ -84,7 +83,6 @@ ul {
 }
 
 ul li {
-  padding-top: 4px;
   padding-bottom: 4px;
 }
 
@@ -97,6 +95,10 @@ footer {
 footer a {
 }
 
+ul.kook {
+  margin: 0;
+}
+
 .kook li {
   display: inline-block;
   line-height: 0;
@@ -106,4 +108,3 @@ footer a {
 .kook li img {
   width: 200px;
 }
-
