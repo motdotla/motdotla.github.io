@@ -43,6 +43,7 @@ blockquote {
   padding: 0 20px 0 20px;
   opacity: 0.8;
   filter: alpha(opacity=80);
+  line-height: 1.4em;
 }
 
 pre {
