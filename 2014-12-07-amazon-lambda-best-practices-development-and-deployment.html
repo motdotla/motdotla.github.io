@@ -13,15 +13,15 @@ title: "Node Lambda"
 
 <h3>Inconveniences</h3>
 
-<p>Local development is not as friendly: The <code>exports.handler</code> wrapping function, event object, and context object makes running an Amazon Lambda function more complex than simply running <code>node index.js</code>.
+<p>First, local development is not friendly: The <code>exports.handler</code> wrapping function, event object, and context object makes running an Amazon Lambda function more complex than simply running <code>node index.js</code>.
 
-<p>Deployment is labor intensive: You can't just run a single command to deploy. You need to zip up the index.js file as well as any dependencies. Then deploy that zip file. Furthermore, there is not a good way to specify if that zip file is for staging or production environments.</p>
+<p>Second, deployment is labor intensive: You can't just run a single command to deploy. You need to zip the index.js file and any dependencies. Then deploy that zip file. Furthermore, there is not a good way to specify if that zip file is for staging or production environments.</p>
 
 <p>These inconveniences are solved with best practices.</p> 
 
-<p>In this blog post, I show you our <strong>best practices at <a href="http://rebelmail.com">RebelMail</a> for <a href="#development">developing</a> and <a href="#deployment">deploying</a> Amazon Lambda functions.</strong></p>
+<p>In this blog post, I show you <strong>our best practices at <a href="http://rebelmail.com">RebelMail</a> for <a href="#development">developing</a> and <a href="#deployment">deploying</a> Amazon Lambda functions.</strong></p>
 
-<p>These are our current best practices. They could change in the future, but currently (December 2014) we are finding them effective. We've strived to make them as easy and automated as possible.</p>
+<p>Note that these are our current best practices. They could change in the future, but currently (December 2014) we are finding them effective. We've strived to make them as easy and automated as possible.</p>
 
 <hr/>
 
