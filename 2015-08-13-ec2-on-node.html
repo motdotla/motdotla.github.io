@@ -1,25 +1,29 @@
 ---
 layout: default
-title: Deployment
+title: A Beginners Guide to Deploying NodeJS to Amazon EC2
 ---
 
-<time>2015-08-05</time>
+<time>2015-08-13</time>
 
-<h2>Deploying NodeJS to Amazon EC2</h2>
+<h2>A Beginners Guide to Deploying NodeJS to Amazon EC2</h2>
 
-<img src="images/deployment.jpg"/>
+<img src="images/ec2-on-node.png" width="300" align="right" />
 
 <p>Node.js is cool. Amazon EC2 is cool. In this tutorial, I show you how to make
 your deployment cool. I describe the single best way to deploy your Node.js
 applications to Amazon EC2.</p>
 
 <p>Begin by cloning 
-<a href="https://github.com/motdotla/ec2-on-node">ec2-on-node</a>. You will
-need to already be familiar with git. [0]</p>
+<a href="https://github.com/motdotla/ec2-on-node">ec2-on-node</a>.</p>
+
+<blockquote><pre>
+git clone git@github.com:motdotla/ec2-on-node.git
+</pre></blockquote>
 
 <p>Next visit 
 <a href="https://us-west-1.console.aws.amazon.com/elasticbeanstalk/home">Amazon Elastic Beanstalk</a>. 
-You will need to already have an Amazon Web Services account. [1]</p>
+You will need to already have an Amazon Web Services account. You can signup 
+for free at <a href="http://aws.amazon.com/free">here</a>.</p>
 
 <p>Click <a href="https://us-west-1.console.aws.amazon.com/elasticbeanstalk/home?region=us-west-1#/newApplication">Create New Application</a> 
 at the top right.</p>
@@ -73,8 +77,8 @@ of this tutorial. Leave the other settings the same and click Next.</p>
   <img src="images/deploy/7.png"/>
 </a>
 
-<p>On the next screen keep the default settings - excepting the addition of a
-`/` to the Application Health Check URL setting. Click Next.</p>
+<p>On the next screen keep the default settings but also add `/` to the 
+Application Health Check URL setting. Click Next.</p>
 
 <a href="images/deploy/8.png" target="_blank">
   <img src="images/deploy/8.png"/>
@@ -87,62 +91,34 @@ click `Launch`.</p>
   <img src="images/deploy/9.png"/>
 </a>
 
-<p>It will take about 5 minutes to finish deployment. </p>
+<p>It will take about 5 minutes to finish deployment. Select your server. In
+the Description tab, click the generated Security Group.</p>
 
 <a href="images/deploy/10.png" target="_blank">
   <img src="images/deploy/10.png"/>
 </a>
 
-<p></p>
+<p>Click the 'Actions' button and then click 'Edit inbound rules'.</p>
 
 <a href="images/deploy/11.png" target="_blank">
   <img src="images/deploy/11.png"/>
 </a>
 
-<p></p>
+<p>On the Edit inbound rules modal, make sure HTTP Port 80 is enabled and make
+sure the source for it is set to 'Anywhere 0.0.0.0/0'.</p>
 
 <a href="images/deploy/12.png" target="_blank">
   <img src="images/deploy/12.png"/>
 </a>
 
-[0] You can learn git at <a href="https://try.github.io">try.github.io</a>
-[1] You can signup for free at <a href="http://aws.amazon.com/free">aws.amazon.com/free</a>
+<p>Lastly, visit the IP address of your ec2-on-node server. For example, 
+<a href="http://54.82.39.111/">http://54.82.39.111/</a>.</p>
 
-+ GitHub
-  + Host on GitHub
-+ App
-  + Nodejs
-  + See example application
-+ Setup npm test running on codeship
-  + package.json/scripts/test 
-  + set example commands [1]
-  + set test commands [2]
-+ Setup Elastic Beanstalk environment
-  + Click create new application
-  + name it api
-  + now create environment - staging
-+ Setup deployment on codeship
-  + Add new deployment pipeline. Choose 'master'
-  + Choose Amazon Elastic Beanstalk
-  + Set an Access Key ID, secret key, choose region, and set application name, environment name, and S3 bucket
+<a href="images/deploy/13.png" target="_blank">
+  <img src="images/deploy/13.png"/>
+</a>
 
-  
-  + Dockerfile
-+ Codeship
-  + Setup to run your tests
-  + Configure codeship with amazon elastic beanstalk
-+ Setup Elastic Beanstalk
-  + 
+<p>Nice job! You just deployed your very first NodeJS application to
+Amazon EC2.</p>
 
-
-[1]
-```
-nvm install iojs-v1.8.4
-nvm use iojs-v1.8.4
-npm install
-```
-
-[2]
-```
-npm test --coverage
-```
+<br>
