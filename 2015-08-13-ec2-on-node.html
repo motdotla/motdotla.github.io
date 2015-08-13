@@ -1,0 +1,124 @@
+---
+layout: default
+title: A Beginners Guide to Deploying NodeJS to Amazon EC2
+---
+
+<time>2015-08-13</time>
+
+<h2>A Beginners Guide to Deploying NodeJS to Amazon EC2</h2>
+
+<img src="images/ec2-on-node.png" width="300" align="right" />
+
+<p>Node.js is cool. Amazon EC2 is cool. In this tutorial, I show you how to make
+your deployment cool. I describe the single best way to deploy your Node.js
+applications to Amazon EC2.</p>
+
+<p>Begin by cloning 
+<a href="https://github.com/motdotla/ec2-on-node">ec2-on-node</a>.</p>
+
+<blockquote><pre>
+git clone git@github.com:motdotla/ec2-on-node.git
+</pre></blockquote>
+
+<p>Next visit 
+<a href="https://us-west-1.console.aws.amazon.com/elasticbeanstalk/home">Amazon Elastic Beanstalk</a>. 
+You will need to already have an Amazon Web Services account. You can signup 
+for free at <a href="http://aws.amazon.com/free">here</a>.</p>
+
+<p>Click <a href="https://us-west-1.console.aws.amazon.com/elasticbeanstalk/home?region=us-west-1#/newApplication">Create New Application</a> 
+at the top right.</p>
+
+<a href="images/deploy/0.png" target="_blank">
+  <img src="images/deploy/0.png"/>
+</a>
+
+<p>Name your application `ec2-on-node` and click Next.</p>
+
+<a href="images/deploy/1.png" target="_blank">
+  <img src="images/deploy/1.png"/>
+</a>
+
+<p>Click the `Create Web Server` button.</p>
+
+<a href="images/deploy/2.png" target="_blank">
+  <img src="images/deploy/2.png"/>
+</a>
+
+<p>Choose the `Create an IAM Role and instance profile` on the popup modal.</p>
+
+<a href="images/deploy/3.png" target="_blank">
+  <img src="images/deploy/3.png"/>
+</a>
+
+<p>On the next screen choose `Docker` and `Load balancing, auto scaling`.
+Click Next.</p>
+
+<a href="images/deploy/4.png" target="_blank">
+  <img src="images/deploy/4.png"/>
+</a>
+
+<p>Upload your application. Click `Choose File` and then find the 
+`ec2-on-node.zip` file. It is inside the repository you cloned at the beginning 
+of this tutorial. Leave the other settings the same and click Next.</p>
+
+<a href="images/deploy/5.png" target="_blank">
+  <img src="images/deploy/5.png"/>
+</a>
+
+<p>On the next screen choose an environment name and environment url.</p>
+
+<a href="images/deploy/6.png" target="_blank">
+  <img src="images/deploy/6.png"/>
+</a>
+
+<p>On the next screen keep the default settings and click Next.</p>
+
+<a href="images/deploy/7.png" target="_blank">
+  <img src="images/deploy/7.png"/>
+</a>
+
+<p>On the next screen keep the default settings but also add `/` to the 
+Application Health Check URL setting. Click Next.</p>
+
+<a href="images/deploy/8.png" target="_blank">
+  <img src="images/deploy/8.png"/>
+</a>
+
+<p>Click Next through the Environment Tags section. Lastly, on the Review page,
+click `Launch`.</p>
+
+<a href="images/deploy/9.png" target="_blank">
+  <img src="images/deploy/9.png"/>
+</a>
+
+<p>It will take about 5 minutes to finish deployment. Select your server. In
+the Description tab, click the generated Security Group.</p>
+
+<a href="images/deploy/10.png" target="_blank">
+  <img src="images/deploy/10.png"/>
+</a>
+
+<p>Click the 'Actions' button and then click 'Edit inbound rules'.</p>
+
+<a href="images/deploy/11.png" target="_blank">
+  <img src="images/deploy/11.png"/>
+</a>
+
+<p>On the Edit inbound rules modal, make sure HTTP Port 80 is enabled and make
+sure the source for it is set to 'Anywhere 0.0.0.0/0'.</p>
+
+<a href="images/deploy/12.png" target="_blank">
+  <img src="images/deploy/12.png"/>
+</a>
+
+<p>Lastly, visit the IP address of your ec2-on-node server. For example, 
+<a href="http://54.82.39.111/">http://54.82.39.111/</a>.</p>
+
+<a href="images/deploy/13.png" target="_blank">
+  <img src="images/deploy/13.png"/>
+</a>
+
+<p>Nice job! You just deployed your very first NodeJS application to
+Amazon EC2.</p>
+
+<br>
