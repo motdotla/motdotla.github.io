@@ -109,3 +109,9 @@ ul.kook {
 .kook li img {
   width: 200px;
 }
+
+.changelog li {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
