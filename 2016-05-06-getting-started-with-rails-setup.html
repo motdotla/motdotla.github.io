@@ -18,7 +18,7 @@ title: "Getting Started With Rails: Install Ruby, Rails, RSpec, Postgres, and Pu
 
 <p>
 <blockquote><pre>
-ruby-install ruby 2.3.1 —system
+ruby-install ruby 2.3.1 --system
 </blockquote></pre>
 </p>
 
@@ -47,7 +47,7 @@ gem install rails
 
 <p>
 <blockquote><pre>
-rails new hunter —database=postgresql
+rails new yourapp --database=postgresql
 </blockquote></pre>
 </p>
 
@@ -57,7 +57,7 @@ rails new hunter —database=postgresql
 
 <p>
 <blockquote><pre>
-cd hunter
+cd yourapp
 bin/rake db:create
 </blockquote></pre>
 </p>
@@ -65,7 +65,7 @@ bin/rake db:create
 <h3>Install Puma</h3>
 
 <p>
-  Add puma to Gemfile.
+  Add puma to Gemfile and run <code>bundle install</code>.
 </p>
 
 <p>
