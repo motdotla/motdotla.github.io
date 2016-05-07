@@ -1,17 +1,17 @@
 ---
 layout: default
-title: "Getting Started With Rails: Install Ruby, Rails, RSpec, and Postgres"
+title: "Getting Started With Rails: Install Ruby, Rails, RSpec, Postgres, and Puma"
 ---
 
 <time>2016-05-06</time>
 
-<h2>Getting Started With Rails: Install Ruby, Rails, RSpec, and Postgres</h2>
+<h2>Getting Started With Rails: Install Ruby, Rails, RSpec, Postgres, and Puma</h2>
 
 <img src="images/getting-started-with-rails-setup.png"/>
 
 <p>
-  In this article, I show you how to setup Ruby on Rails with RSpec and
-  Postgres
+  In this article, I show you how to setup Ruby on Rails with RSpec,
+  Postgres, and Puma
 </p>
 
 <h3>Install Ruby</h3>
@@ -59,6 +59,27 @@ rails new hunter —database=postgresql
 <blockquote><pre>
 cd hunter
 bin/rake db:create
+</blockquote></pre>
+</p>
+
+<h3>Install Puma</h3>
+
+<p>
+  Add puma to Gemfile.
+</p>
+
+<p>
+<blockquote><pre>
+gem 'puma'
+</blockquote></pre>
+</p>
+
+<p>
+  Finally, run the server.
+</p>
+
+<p>
+<blockquote><pre>
 bin/rails server
 </blockquote></pre>
 </p>
@@ -70,7 +91,7 @@ bin/rails server
 <h3>Install RSpec</h3>
 
 <p>
-  Add rspec-rails to Gemfile
+  Add rspec-rails to Gemfile.
 </p>
 
 <p>
