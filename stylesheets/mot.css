@@ -96,17 +96,17 @@ footer {
 footer a {
 }
 
-ul.kook {
+ul.grid {
   margin: 0;
 }
 
-.kook li {
+.grid li {
   display: inline-block;
   line-height: 0;
   list-style: none;
 }
 
-.kook li img {
+.grid li img {
   width: 200px;
 }
 

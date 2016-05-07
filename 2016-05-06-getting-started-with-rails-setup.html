@@ -1,0 +1,118 @@
+---
+layout: default
+title: "Getting Started With Rails: Install Ruby, Rails, RSpec, and Postgres"
+---
+
+<time>2016-05-06</time>
+
+<h2>Getting Started With Rails: Install Ruby, Rails, RSpec, and Postgres</h2>
+
+<img src="images/getting-started-with-rails-setup.png"/>
+
+<p>
+  In this article, I show you how to setup Ruby on Rails with RSpec and
+  Postgres
+</p>
+
+<h3>Install Ruby</h3>
+
+<p>
+<blockquote><pre>
+ruby-install ruby 2.3.1 —system
+</blockquote></pre>
+</p>
+
+<p>
+  For simplicity I prefer to have only one version of ruby installed. [1]
+</p>
+
+<h3>Install Postgres</h3>
+
+<p>
+  Download <a href="http://postgresapp.com/">Postgres.app</a> onto your machine
+  and follow the installation process.
+</p>
+
+<h3>Install Rails</h3>
+
+<p>
+<blockquote><pre>
+gem install rails
+</blockquote></pre>
+</p>
+
+<p>
+  Create a project.
+</p>
+
+<p>
+<blockquote><pre>
+rails new hunter —database=postgresql
+</blockquote></pre>
+</p>
+
+<p>
+  Enter the project.
+</p>
+
+<p>
+<blockquote><pre>
+cd hunter
+bin/rake db:create
+bin/rails server
+</blockquote></pre>
+</p>
+
+<p>
+  Visit <a href="localhost:3000">http://localhost:3000</a>
+</p>
+
+<h3>Install RSpec</h3>
+
+<p>
+  Add rspec-rails to Gemfile
+</p>
+
+<p>
+<blockquote><pre>
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
+end
+</blockquote></pre>
+</p>
+
+<p>
+  Then:
+</p>
+
+<p>
+<blockquote><pre>
+bundle install
+bin/rails generate spec:install
+rm -rf test
+bundle binstubs rspec-core
+</blockquote></pre>
+</p>
+
+<p>
+  Then run your tests:
+</p>
+
+<p>
+<blockquote><pre>
+bin/rspec
+</blockquote></pre>
+</p>
+
+<h3>That's it!</h3>
+
+<p>
+  You're all set. You have a good foundation for building out your Rails
+  application.
+</p>
+
+<p>
+  [1] <a href="http://zaiste.net/2013/04/towards_simplicity_from_rbenv_to_chruby/">zaiste.net/2013/04/towards_simplicity_from_rbenv_to_chruby/</a>
+</p>
+
+
