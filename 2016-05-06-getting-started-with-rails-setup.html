@@ -17,9 +17,9 @@ title: "Getting Started With Rails: Install Ruby, Rails, RSpec, Postgres, and Pu
 <h3>Install Ruby</h3>
 
 <p>
-<blockquote><pre>
+<code><pre>
 ruby-install ruby 2.3.1 --system
-</blockquote></pre>
+</code></pre>
 </p>
 
 <p>
@@ -36,9 +36,9 @@ ruby-install ruby 2.3.1 --system
 <h3>Install Rails</h3>
 
 <p>
-<blockquote><pre>
+<code><pre>
 gem install rails
-</blockquote></pre>
+</code></pre>
 </p>
 
 <p>
@@ -46,9 +46,9 @@ gem install rails
 </p>
 
 <p>
-<blockquote><pre>
+<code><pre>
 rails new yourapp --database=postgresql
-</blockquote></pre>
+</code></pre>
 </p>
 
 <p>
@@ -56,10 +56,10 @@ rails new yourapp --database=postgresql
 </p>
 
 <p>
-<blockquote><pre>
+<code><pre>
 cd yourapp
 bin/rake db:create
-</blockquote></pre>
+</code></pre>
 </p>
 
 <h3>Install Puma</h3>
@@ -69,9 +69,9 @@ bin/rake db:create
 </p>
 
 <p>
-<blockquote><pre>
+<code><pre>
 gem 'puma'
-</blockquote></pre>
+</code></pre>
 </p>
 
 <p>
@@ -79,9 +79,9 @@ gem 'puma'
 </p>
 
 <p>
-<blockquote><pre>
+<code><pre>
 bin/rails server
-</blockquote></pre>
+</code></pre>
 </p>
 
 <p>
@@ -95,11 +95,11 @@ bin/rails server
 </p>
 
 <p>
-<blockquote><pre>
+<code><pre>
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 end
-</blockquote></pre>
+</code></pre>
 </p>
 
 <p>
@@ -107,12 +107,12 @@ end
 </p>
 
 <p>
-<blockquote><pre>
+<code><pre>
 bundle install
 bin/rails generate spec:install
 rm -rf test
 bundle binstubs rspec-core
-</blockquote></pre>
+</code></pre>
 </p>
 
 <p>
@@ -120,9 +120,9 @@ bundle binstubs rspec-core
 </p>
 
 <p>
-<blockquote><pre>
+<code><pre>
 bin/rspec
-</blockquote></pre>
+</code></pre>
 </p>
 
 <h3>That's it!</h3>
@@ -131,6 +131,8 @@ bin/rspec
   You're all set. You have a good foundation for building out your Rails
   application.
 </p>
+
+<hr/>
 
 <p>
   [1] <a href="http://zaiste.net/2013/04/towards_simplicity_from_rbenv_to_chruby/">zaiste.net/2013/04/towards_simplicity_from_rbenv_to_chruby/</a>

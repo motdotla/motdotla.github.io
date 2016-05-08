@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Getting Started With Rails: Install GraphQL"
+title: "Getting Started With Rails: Installing GraphQL"
 ---
 
 <time>2016-05-07</time>
 
-<h2>Getting Started With Rails: Install GraphQL</h2>
+<h2>Getting Started With Rails: Installing GraphQL</h2>
 
 <img src="images/getting-started-with-rails-graphql.png"/>
 
@@ -19,24 +19,24 @@ title: "Getting Started With Rails: Install GraphQL"
 </p>
 
 <p>
-  Anyways, let's begin by creating a model.
+  Let's begin by creating a model.
 </p>
 
 <p>
-<blockquote><pre>
+<code><pre>
 bin/rails generate model User email:string
 bin/rake db:migrate
-</pre></blockquote>
+</pre></code>
 </p>
 
 <p>
-  This setups a User model for us. Let's populate it with one record. First enter the console.
+  This sets up a User model for us. Let's populate it with one record. First enter the console.
 </p>
 
 <p>
-<blockquote><pre>
+<code><pre>
 bin/rails console
-</pre></blockquote>
+</pre></code>
 </p>
 
 <p>
@@ -44,9 +44,9 @@ bin/rails console
 </p>
 
 <p>
-<blockquote><pre>
+<code><pre>
 User.create(email: "you@email.com")
-</pre></blockquote>
+</pre></code>
 </p>
 
 <p>
@@ -60,11 +60,11 @@ User.create(email: "you@email.com")
 </p>
 
 <p>
-<blockquote><pre>
+<code><pre>
 gem 'graphql'
 gem 'graphiql-rails'
 gem 'graphql-relay'
-</pre></blockquote>
+</pre></code>
 </p>
 
 <p>
@@ -76,9 +76,9 @@ gem 'graphql-relay'
 </p>
 
 <p>
-<blockquote><pre>
+<code><pre>
 touch app/controllers/graphql_controller.rb
-</pre></blockquote>
+</pre></code>
 </p>
 
 <p>
@@ -86,7 +86,7 @@ touch app/controllers/graphql_controller.rb
 </p>
 
 <p>
-<blockquote><pre>
+<code><pre>
 class GraphqlController < ApplicationController
   skip_before_filter :verify_authenticity_token
 
@@ -95,7 +95,7 @@ class GraphqlController < ApplicationController
     render json: result_hash
   end
 end
-</pre></blockquote>
+</pre></code>
 </p>
 
 <p>
@@ -103,14 +103,14 @@ end
 </p>
 
 <p>
-<blockquote><pre>
+<code><pre>
 Rails.application.routes.draw do
   ...
   post '/graphql', to: 'graphql#query'
   mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql" if Rails.env.development?
   ...
 end
-</pre></blockquote>
+</pre></code>
 </p>
 
 <p>
@@ -118,9 +118,9 @@ end
 </p>
 
 <p>
-<blockquote><pre>
+<code><pre>
 touch app/models/schema.rb
-</pre></blockquote>
+</pre></code>
 </p>
 
 <p>
@@ -128,7 +128,7 @@ touch app/models/schema.rb
 </p>
 
 <p>
-<blockquote><pre>
+<code><pre>
 UserType = GraphQL::ObjectType.define do
   name 'User'
   description '...'
@@ -153,7 +153,7 @@ end
 Schema = GraphQL::Schema.new(
   query: QueryType
 )
-</pre></blockquote>
+</pre></code>
 </p>
 
 <p>
@@ -168,9 +168,9 @@ Schema = GraphQL::Schema.new(
 </p>
 
 <p>
-<blockquote><pre>
+<code><pre>
 bin/rails server
-</pre></blockquote>
+</pre></code>
 </p>
 
 <p>
@@ -182,13 +182,13 @@ bin/rails server
 </p>
 
 <p>
-<blockquote><pre>
+<code><pre>
 {
   user(id:"1") {
     email
   }
 }
-</pre></blockquote>
+</pre></code>
 </p>
 
 <p>
@@ -196,7 +196,7 @@ bin/rails server
 </p>
 
 <p>
-<blockquote><pre>
+<code><pre>
 {
   "data": {
     "user": {
@@ -204,7 +204,7 @@ bin/rails server
     }
   }
 }
-</pre></blockquote>
+</pre></code>
 </p>
 
 <img src="images/getting-started-with-rails-graphql/1.png"/>
