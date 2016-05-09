@@ -137,7 +137,7 @@ UserType = GraphQL::ObjectType.define do
   field :email, !types.String
 end
 
-QueryType = GraphQL::ObjectType.define do
+QueryRoot = GraphQL::ObjectType.define do
   name 'Query'
   description '...'
   
@@ -151,7 +151,7 @@ QueryType = GraphQL::ObjectType.define do
 end
 
 Schema = GraphQL::Schema.new(
-  query: QueryType
+  query: QueryRoot
 )
 </pre></code>
 </p>
