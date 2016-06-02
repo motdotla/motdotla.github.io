@@ -1,16 +1,16 @@
 ---
 layout: default
-title: "Getting Started With SailsJS"
+title: "Getting Started With Sails.js: Install Node, Sails, and Postgres"
 ---
 
 <time>2016-06-02</time>
 
-<h2>Getting Started With SailsJS</h2>
+<h2>Getting Started With Sails.js: Install Node, Sails, and Postgres</h2>
 
-<img src="images/getting-started-with-rails-setup.png"/>
+<img src="images/getting-started-with-sails-js-setup.png"/>
 
 <p>
-  In this article, I show you how to setup SailsJS.
+  In this article, I show you how to setup Sails.js.
 </p>
 
 <h3>Install NodeJS</h3>
@@ -41,7 +41,25 @@ node -v
   and follow the installation process.
 </p>
 
-<h3>Install SailsJS</h3>
+<p>
+  Once installed, open the psql command.
+</p>
+
+<img src="images/getting-started-with-sails-js-setup/1.png"/>
+
+<p>
+  Then, create the database.
+</p>
+
+<p>
+<code><pre>
+CREATE DATABASE yourapp_development;
+</code></pre>
+</p>
+
+<img src="images/getting-started-with-sails-js-setup/2.png"/>
+
+<h3>Install Sails.js</h3>
 
 <p>
 <code><pre>
@@ -60,7 +78,47 @@ sails new yourapp
 </p>
 
 <p>
-  Enter the project and run the server.
+  Enter the project and install postgresql.
+</p>
+
+<h3>Configure Postgres with Sails</h3>
+
+<p>
+<code><pre>
+npm install sails-postgresql --save
+</code></pre>
+</p>
+
+<p>
+  Open <code>config/connections.js</code> and add the following to the end of 
+  the file.
+</p>
+
+<p>
+<code><pre>
+postgresDevelopment: {
+  adapter: 'sails-postgresql',
+  url: 'postgres://postgres@localhost/yourapp_development',
+  ssl: false
+}
+</code></pre>
+</p>
+
+<p>
+  Good. Next open <code>config/models.js</code>, uncomment the 
+  <code>connection:</code> line, and set to postgresql.
+</p>
+
+<p>
+<code><pre>
+connection: 'postgresDevelopment',
+</code></pre>
+</p>
+
+<h3>Start the app</h3>
+
+<p>
+  Save those changes and start the app.
 </p>
 
 <p>
@@ -77,7 +135,7 @@ npm start
 <h3>That's it!</h3>
 
 <p>
-  You're all set. You have a good foundation for building out your SailsJS
+  You're all set. You have a good foundation for building out your Sails.js
   application.
 </p>
 
