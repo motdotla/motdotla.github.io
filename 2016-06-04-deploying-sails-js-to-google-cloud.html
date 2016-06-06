@@ -17,7 +17,7 @@ title: "Deploying Sails.js to Google Cloud"
 <h3>Prepare Sails.js</h3>
 
 <p>
-	Configure <code>config/env/development.js</code> to port 8080.
+	Configure <code>config/env/development.js</code> to <strong>port 8080</strong>.
 </p>
 
 <p>
@@ -69,7 +69,7 @@ gcloud auth login
 
 <p>
 <code><pre>
-gcloud preview app deploy --project yourapp-1331
+gcloud preview app deploy --project YOUR-PROJECT-ID
 </pre></code>
 </p>
 
@@ -85,7 +85,7 @@ gcloud preview app deploy --project yourapp-1331
 
 <p>
 <code><pre>
-gcloud preview app logs read --project yourapp-1331
+gcloud preview app logs read --project YOUR-PROJECT-ID
 </pre></code>
 </p>
 
