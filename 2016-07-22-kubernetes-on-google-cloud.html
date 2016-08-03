@@ -1,0 +1,13 @@
+https://cloud.google.com/nodejs/tutorials/bookshelf-on-container-engine
+
+Install the Kubernetes command line.
+
+```
+gcloud components install kubectl
+```
+
+Create your cluster.
+
+```
+gcloud container clusters create blitz --scope "cloud-platform" --num-nodes 2 --zone us-central1-c
+```
