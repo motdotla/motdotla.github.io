@@ -8,7 +8,7 @@ title: "Calculating Euclidean Distance in Ruby"
 <h2>Calculating Euclidean Distance in Ruby</h2>
 
 <p>
-  Euclidean distance is often used in conjunction with the <a href="https://blog.intercom.com/machine-learning-way-easier-than-it-looks/">k-means</a> algorithim.
+  Euclidean distance is often used in conjunction with the <a href="https://blog.intercom.com/machine-learning-way-easier-than-it-looks/">k-means</a> algorithm.
   Remember your <strong>pythagorean theorem</strong> from high school geometry? 
   <strong>Euclidean distance is the same theorem but across N dimensions.</strong>
 </p>
@@ -16,6 +16,8 @@ title: "Calculating Euclidean Distance in Ruby"
 <p>
   For example, you can calculate the distance between two points in 2D, 3D space, 4D space, and more. Let's start with a 2D example.
 </p>
+
+<h3>2D Example</h3>
 
 <img src="images/euclidean-distance-ruby-0.png"/>
 
@@ -38,7 +40,7 @@ title: "Calculating Euclidean Distance in Ruby"
 
 <p>
   With that information we can calculate the length of line C (the connecting line)
-  with the following Pythagoreum formula <code>sqrt(A^2 + B^2) = C</code>. 
+  with the following pythagorean formula <code>sqrt(A^2 + B^2) = C</code>. 
   Plugging in the numbers we get <code>sqrt(2^2 + 3^2) = C</code>, which becomes
   <code>sqrt(4 + 9) = C</code>, which subsequently becomes approximately 
   <code>3.605 = C</code>.
@@ -59,6 +61,8 @@ title: "Calculating Euclidean Distance in Ruby"
   between two points in 2D space. Let's try it in 3 dimensions next.
 </p>
 
+<h3>3D Example</h3>
+
 <p>
   In 3 dimensions, we can model our vectors as an array of 3 numbers rather than
   2 numbers. [X,Y] becomes [X,Y,Z]. Let's build off the top of our last 
@@ -71,6 +75,8 @@ title: "Calculating Euclidean Distance in Ruby"
 
   distance = sqrt( (1-4)^2 + (3-1)^2 + (2-4)^2 )
 </pre></code>
+
+<h3>Conclusion</h3>
 
 <p>
   That's it! All we had to do was add the 3rd dimension to the distance
@@ -86,6 +92,6 @@ title: "Calculating Euclidean Distance in Ruby"
 
 <p>
   From here, you can follow that pattern to add N dimensions as necessary
-  for your k-means algorithim.
+  for your k-means algorithm.
 </p>
 
