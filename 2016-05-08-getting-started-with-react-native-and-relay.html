@@ -96,7 +96,7 @@ const request = require('sync-request')
 const url = 'http://localhost:3000/graphql'
 
 const response = request('POST', url, {
-  qs: {
+  json: {
     query: introspectionQuery
   }
 })
