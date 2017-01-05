@@ -17,7 +17,7 @@ body {
 
 .content {
   margin: 0 auto;
-  max-width: 620px;
+  max-width: 520px;
   text-align: left;
 }
 
@@ -112,7 +112,9 @@ ul.grid {
 }
 
 .grid li img {
-  width: 200px;
+  width: 124px;
+  padding: 0;
+  margin: 0;
 }
 
 .changelog li {
