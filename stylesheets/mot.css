@@ -15,9 +15,13 @@ body {
   text-align: center;
 }
 
+.logo {
+  font-size: 1.2rem;
+}
+
 .content {
   margin: 0 auto;
-  max-width: 520px;
+  max-width: 580px;
   text-align: left;
 }
 
@@ -26,6 +30,13 @@ hr {
   border-top: 1px solid gray;
   height: 1px;
   margin: 1.2em 0 1.2em 0;
+}
+
+hr.short {
+  border: none;
+  border-top: 1px solid gray;
+  height: 1px;
+  margin: 1.2em 10rem 1.2em 10rem;
 }
 
 h1 {
