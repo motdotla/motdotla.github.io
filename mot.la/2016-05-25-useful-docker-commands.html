@@ -1,0 +1,105 @@
+---
+layout: mot-la
+title: "Useful Docker commands"
+---
+
+<time>2016-05-24</time>
+
+<h2>Useful Docker commands</h2>
+
+<h3>Hello World in a container</h3>
+
+<p>
+  Run the following in Terminal
+</p>
+
+<code><pre>
+docker run busybox echo hello world
+</pre></code>
+
+<p>
+  That's it! You just ran your first docker container. Try running the command
+  again but instead with <code>echo Hello Universe</code>.
+</p>
+
+
+<h3>Useful bits</h3>
+
+<p>
+  You can see the container by running:
+</p>
+
+<code><pre>
+docker ps --all
+</pre></code>
+
+<p>
+  You can see the image used for the container by typing:
+</p>
+
+<code><pre>
+docker images
+</pre></code>
+
+<p>
+  You can remove a container by providing its CONTAINER ID to the <code>rm</code>
+  command.
+</p>
+
+<code><pre>
+docker rm a700ab83e84f
+</pre></code>
+
+<p>
+  Then as long as no running or stopped containers are using the image, you can
+  delete the image too.
+</p>
+
+<code><pre>
+docker rmi busybox
+</pre></code>
+
+<h3>Getting a terminal session</h3>
+
+<p>
+  Ok, now let's actually login and get a terminal session. Let's use ubuntu.
+</p>
+
+<code><pre>
+docker run -tty --interactive ubuntu:14.04
+</pre></code>
+
+<h3>Running a server as a daemon</h3>
+
+<p>
+  Ok, now let's run an actual server.
+</p>
+
+<code><pre>
+docker run --detach --publish 1234:1234 python:2.7 python -m SimpleHTTPServer 1234
+</pre></code>
+
+<p>
+  Then connect to that container by:
+</p>
+
+<code><pre>
+docker exec -ti CONTAINER_ID
+</pre></code>
+
+<p>
+  Then get the ip address by doing:
+</p>
+
+<code><pre>
+docker-machine ip
+</pre></code>
+
+<p>
+  And finally visit: THE_IP:1234
+</p>
+
+
+
+
+

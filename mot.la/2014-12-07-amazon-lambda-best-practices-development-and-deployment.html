@@ -1,0 +1,108 @@
+---
+layout: mot-la
+title: "Node Lambda"
+---
+
+<time>2014-12-07</time>
+
+<h2>Amazon Lambda Best Practices: Development and Deployment</h2>
+
+<img src="images/node-lambda.png" align="right" />
+
+<p><a href="http://aws.amazon.com/lambda/">Amazon Lambda</a> is the new hotness. You can run custom computing tasks at will. It's convenient, but it has two inconveniences.</p>
+
+<h3>Inconveniences</h3>
+
+<p>First, local development is not friendly: The <code>exports.handler</code> wrapping function, event object, and context object makes running an Amazon Lambda function more complex than simply running <code>node index.js</code>.
+
+<p>Second, deployment is labor intensive: You can't just run a single command to deploy. You need to zip the index.js file and any dependencies. Then deploy that zip file. Furthermore, there is not a good way to specify if that zip file is for staging or production environments.</p>
+
+<p>These inconveniences are solved with best practices.</p> 
+
+<p>In this blog post, I show you <strong>our best practices at <a href="http://rebelmail.com">RebelMail</a> for <a href="#development">developing</a> and <a href="#deployment">deploying</a> Amazon Lambda functions.</strong></p>
+
+<p>These best practices could change in the future, but currently (December 2014) we are finding them effective. We've strived to make them as easy and automated as possible.</p>
+
+<hr/>
+
+<h3 id="development">Local Development</h3>
+
+<p>Let's get right to our best practice for developing Amazong Lambda functions locally.</p>
+
+<p>1. Clone the <a href="http://github.com/rebelmail/node-lambda-template">node-lambda-template</a> and initialize it.</p>
+
+<pre><code>git clone https://github.com/rebelmail/node-lambda-template
+cd node-lambda-template
+npm install
+</code></pre>
+
+<p>2. Edit the contents of <code>event.json</code> and <code>index.js</code> as needed.</p>
+
+<pre><code>{
+  "key": "value",
+  "key2": "value2",
+  "other_key": "other_value"
+}
+</code></pre>
+<pre><code>exports.handler = function( event, context ) {
+  console.log( "event", event );
+  context.done( );
+}
+</code></pre>
+
+<p>3. Run <code>node-lambda run</code>.</p>
+
+<pre><code>./node_modules/.bin/node-lambda run
+</code></pre>
+
+<p>That's it! <strong>Repeat steps 2 and 3</strong> during your development process.</p>
+
+<p>Behind the scenes, the <a href="https://github.com/rebelmail/node-lambda">node-lambda</a> module does the hard work of including the event object, context, object, and running the exports.handler function.</p>
+
+<hr/>
+
+<h3 id="deployment">Remote Deployment</h3>
+
+<p>The following is our best practice for deploying Amazon Lambda functions.</p> 
+
+<p>Once again, let's get right to it. <small>(Assumes you've completed Development:Step 1 above)</small></p>
+
+<p>1. Edit the contents of <code>.env</code>.</p>
+
+<pre><code>AWS_ENVIRONMENT=development
+AWS_ACCESS_KEY_ID=your_key
+AWS_SECRET_ACCESS_KEY=your_secret
+AWS_ROLE=your_amazon_role
+AWS_REGION=us-east-1
+AWS_FUNCTION_NAME=
+AWS_HANDLER=index.handler
+AWS_MODE=event
+AWS_MEMORY_SIZE=128
+AWS_TIMEOUT=3
+AWS_DESCRIPTION=
+AWS_RUNTIME=nodejs
+</code></pre>
+
+<p>2. Run <code>node-lambda deploy</code>.</p>
+
+<pre><code>./node_modules/.bin/node-lambda deploy --environment staging
+</code></pre>
+
+<p>That's it! <strong>Change 'staging' to 'production' as needed.</strong></p>
+
+<p>Under the hood, the <a href="https://github.com/rebelmail/node-lambda">node-lambda</a> module smartly zips up the entire directory (ignoring git files, dot files, and log files yet including dependencies). It then uploads that to Amazon Lambda and appends -environment to the end of the function name.</p> 
+
+<hr />
+
+<h3>Conclusion</h3>
+
+<p>We developed these best practices at <a href="http://github.com/rebelmail">RebelMail</a> after working with <a href="http://aws.amazon.com/lambda/">Amazon Lambda</a> for a few weeks.</p>
+
+<p>If you find yourself wanting for more, make a pull request or file an issue on one of these repositories.</p>
+
+<ul>
+  <li><a href="https://github.com/rebelmail/node-lambda">node-lambda</a></li>
+  <li><a href="https://github.com/rebelmail/node-lambda-template">node-lambda-template</a></li>
+</ul>
+
+<p>Finally, I'd love to hear your best practices for development and/or deployment of your Amazon Lambda functions. Email me at <a href="mailto:mot@rebelmail.com">mot@rebelmail.com</a>. We're always looking for better best practices.</p>

@@ -1,0 +1,218 @@
+---
+layout: mot-la
+title: "Getting Started With Rails: Installing GraphQL"
+---
+
+<time>2016-05-07</time>
+
+<h2>Getting Started With Rails: Installing GraphQL</h2>
+
+<img src="images/getting-started-with-rails-graphql.png"/>
+
+<p>
+  In this article, I show you how to implement GraphQL with Ruby on Rails. If you have not already, <a href="/2016-05-06-getting-started-with-rails-setup.html">follow steps here</a> to get setup with Rails, Postgres, and Puma.
+</p>
+
+<p>
+  Also, you can find this tutorial already wrapped up into a Heroku deployable
+  template <a href="https://github.com/motdotla/rails-graphql-heroku-template">here</a>.
+</p>
+
+<p>
+  Let's begin by creating a model.
+</p>
+
+<p>
+<code><pre>
+bin/rails generate model User email:string
+bin/rake db:migrate
+</pre></code>
+</p>
+
+<p>
+  This sets up a User model for us. Let's populate it with one record. First enter the console.
+</p>
+
+<p>
+<code><pre>
+bin/rails console
+</pre></code>
+</p>
+
+<p>
+  Create the user.
+</p>
+
+<p>
+<code><pre>
+User.create(email: "you@email.com")
+</pre></code>
+</p>
+
+<p>
+  Now we're ready to configure GraphQL.
+</p>
+
+<h3>Setup GraphQL</h3>
+
+<p>
+  Add the following gems to your Gemfile.
+</p>
+
+<p>
+<code><pre>
+gem 'graphql'
+gem 'graphiql-rails'
+gem 'graphql-relay'
+</pre></code>
+</p>
+
+<p>
+  Run <code>bundle install</code>.
+</p>
+
+<p>
+  Next setup the graphql controller.
+</p>
+
+<p>
+<code><pre>
+touch app/controllers/graphql_controller.rb
+</pre></code>
+</p>
+
+<p>
+  Paste in the following:
+</p>
+
+<p>
+<code><pre>
+class GraphqlController < ApplicationController
+  skip_before_filter :verify_authenticity_token
+
+  def query
+    variables = params[:variables]
+    variables = JSON.parse(variables) if variables && variables.is_a?(String)
+
+    result_hash = Schema.execute(params[:query], variables: variables)
+    render json: result_hash
+  end
+end
+</pre></code>
+</p>
+
+<p>
+  Next add the following to your config/routes.rb.
+</p>
+
+<p>
+<code><pre>
+Rails.application.routes.draw do
+  ...
+  post '/graphql', to: 'graphql#query'
+  mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql" if Rails.env.development?
+  ...
+end
+</pre></code>
+</p>
+
+<p>
+  Good, now we can configure our Schema model.
+</p>
+
+<p>
+<code><pre>
+touch app/models/schema.rb
+</pre></code>
+</p>
+
+<p>
+  Paste in the following.
+</p>
+
+<p>
+<code><pre>
+UserType = GraphQL::ObjectType.define do
+  name 'User'
+  description '...'
+  
+  field :id, !types.String
+  field :email, !types.String
+end
+
+QueryRoot = GraphQL::ObjectType.define do
+  name 'Query'
+  description '...'
+  
+  field :user do
+    type UserType
+    argument :id, !types.String
+    resolve -> (root, args, ctx) {
+      User.find(args[:id])
+    }
+  end
+end
+
+Schema = GraphQL::Schema.new(
+  query: QueryRoot
+)
+</pre></code>
+</p>
+
+<p>
+  That's it! You now have a working GraphQL implementation on Rails. Let's
+  try out a GraphQL query.
+</p>
+
+<h3>Run a GraphQL Query</h3>
+
+<p>
+  Start up your rails server.
+</p>
+
+<p>
+<code><pre>
+bin/rails server -b 127.0.0.1 -p 3000
+</pre></code>
+</p>
+
+<p>
+  Then visit <a href="http://localhost:3000/graphiql">localhost:3000/graphiql</a>
+</p>
+
+<p>
+  In the left hand pane, paste the following:
+</p>
+
+<p>
+<code><pre>
+{
+  user(id:"1") {
+    email
+  }
+}
+</pre></code>
+</p>
+
+<p>
+  You should see a result like the following.
+</p>
+
+<p>
+<code><pre>
+{
+  "data": {
+    "user": {
+      "email": "you@email.com"
+    }
+  }
+}
+</pre></code>
+</p>
+
+<img src="images/getting-started-with-rails-graphql/1.png"/>
+
+<p>
+  Congratulations! You just ran your very first GraphQL query.
+</p>
+

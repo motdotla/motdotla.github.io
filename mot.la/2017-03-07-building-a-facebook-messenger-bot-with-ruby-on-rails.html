@@ -1,0 +1,169 @@
+---
+layout: mot-la
+title: How to Build a Facebook Messenger Bot with Ruby on Rails
+---
+
+<time>2017-03-07</time>
+
+<h2>How to Build a Facebook Messenger Bot with Ruby on Rails</h2>
+
+<p>
+  The other day I learned how to build a Facebook Messenger Bot using Ruby on Rails. Here is how to do it.
+</p>
+
+<p>What you'll need:</p>
+
+<ul>
+  <li>Basic knowledge of <a href="http://rubyonrails.org/">Ruby on Rails</a></li>
+  <li>A Facebook account</li>
+  <li><a href="https://ngrok.com">ngrok</a></li>
+</ul>
+
+<hr class="short"/>
+
+<h3>Configure Rails</h3>
+
+<p>
+  Begin by generating your rails application.
+</p>
+
+<code><pre>
+$ rails new your-app --database postgresql
+</pre></code>
+
+<p>
+  Next, we need a way to accept messages. <a href="https://github.com/hyperoslo">Hypersolo's</a> facebook-messenger gem is a strong choice for this. Add it to your Gemfile. Also add <a href="https://github.com/bkeepers/dotenv">dotenv-rails</a>. We'll need it later.
+</p>
+
+<code><pre>
+# Gemfile
+...
+gem 'dotenv-rails', :groups => [:development, :test]
+gem 'facebook-messenger'
+...
+</pre></code>
+
+<p>
+  Install it.
+</p>
+
+<code><pre>
+$ bundle install
+</pre></code>
+
+<p>
+  Then follow the instructions <a href="https://github.com/hyperoslo/facebook-messenger#-on-rails">here</a>. When you are done, proceed to the next step.
+</p>
+
+<hr class="short"/>
+
+<h3>Configure Facebook App</h3> 
+
+<h4>1. Page</h4>
+
+<p>
+  <a href="https://www.facebook.com/pages/create">Create a facebook page</a>. You'll need this so you can subscribe your messenger app to your facebook page.
+</p>
+
+<h4>2. App</h4>
+
+<p>
+  <a href="https://developers.facebook.com/">Create the application</a> at developers.facebook.com.
+</p>
+
+<h4>3. Webhook</h4>
+
+<p>
+  Create a new webhook for the app you previously created.
+</p>
+
+<p>
+  It will ask you for a domain and a verification token of your choosing. Choose whatever you want for the verification token. But the domain will have to match up with your ngrok server.
+</p>
+
+<p><small>Note: Don't subscribe to message_echoes</small></p>
+
+<h4>3.1 ngrok</h4>
+
+<p>
+  Start your Rails server.
+</p.
+
+<code><pre>
+$ rails server
+</pre></code>
+
+<p>
+  Start your ngrok tunnel server.
+</p>
+
+<code><pre>
+$ ngrok http 3000
+</pre></code>
+
+<p>
+  Ngrok creates a unique URL mapping to your local Rails server. It will look something like this: <code>https://e4a6dbae.ngrok.io</code>
+</p>
+
+<p>
+  Test it out by visiting <a href="https://REPLACE.ngrok.io/bot">http://REPLACE.ngrok.io/bot</a>. You should see <code>Error; wrong verify token</code>, just as you would if you visited <a href="http://localhost:3000/bot">http://localhost:3000</a>.
+</p>
+
+<p>
+  Great! Now paste that url into the Webhook form.
+</p>
+
+<p>
+  Lastly, subscribe the webhook to the page you created previously. The location for this is hard to find and moves locations. Look for the text "Select a page to subscribe your webhook to the page events" on the Messenger > Settings page under your Facebook developers account.
+</p>
+
+<p>
+  You are almost done.
+</p>
+
+<hr class="short"/>
+
+<h3>Configure Token ENVs</h3>
+
+<p>
+  Create a <code>.env</code> file in the root of your Rails project.
+</p>
+
+<code><pre>
+$ touch .env
+</pre></code>
+  
+<p>
+  Configure it using the VERIFY_TOKEN and ACCESS_TOKEN. You created these when setting up your Facebook page and messenger application.
+</p>
+
+<code><pre>
+# .env
+VERIFY_TOKEN=verify
+ACCESS_TOKEN=EAADsuzGN4pMBAHlSKyqnZBEZBKo39ZEAADsuzGN4pMBAHlSKyqnZBEZBKo39Z
+</pre></code>
+
+<p>
+  Restart your Rails server.
+</p>
+
+<code><pre>
+$ rails server
+</pre></code>
+
+<hr class="short"/>
+
+<h3>Test it out</h3>
+
+<p>
+  Visit the facebook page you created. Scroll about halfway down and look in the right hand sidebar. You will see a <strong>Message Now</strong> link.
+<p>
+
+<p>
+  Click <strong>Message Now</strong> and test out your app! You should see your bot reply with "Hello, human!".
+</p>
+
+<p>
+  Debugging: If you are not getting a response from your bot, double check that your webhook URL matches your ngrok server URL. Also, make sure your ngrok server is still running.
+</p>
+

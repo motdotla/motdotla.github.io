@@ -1,0 +1,41 @@
+---
+layout: mot-la
+title: Carve API
+---
+
+<time>2014</time>
+
+<h2>Carve API <small><a href="http://github.com/motdotla/carve-api">url</a></small></h2>
+
+<img src="images/carve-api.gif"/>
+
+<p>
+  <a href="http://github.com/motdotla/carve-api">Carve API</a> makes it easy to convert PDFs to an array of PNGs. Simply make a web request.
+</p>
+
+<pre>
+https://carve-api.herokuapp.com/api/v0/documents/create.json?url=http://mot.la/assets/resume.pdf&webhook=http://requestb.in/10c8e4o1
+</pre>
+
+<p>The <strong>url</strong> must be a url to a PDF file. The <strong>webhook</strong> must be a url that can accept a POST request with the processed payload - <a href="http://requestb.in">requestb.in</a> is handy for this.</p>
+
+<p>The application is entirely open source. You can host it yourself in just <a href="https://github.com/motdotla/carve-api#installation">one</a>, <a href="https://github.com/motdotla/carve-worker">two</a> clicks.</p>
+
+<p>Those two clicks will install all of the following - the full stack for Carve API.</p>
+
+<ul>
+  <li><a href="http://github.com/motdotla/carve-api">carve-api</a> - for letting the developer make conversion requests.</li>
+  <li><a href="http://github.com/motdotla/carve-worker">carve-worker</a> - for converting the PDF to an array of PNGs in the background.</li>
+  <li><a href="http://github.com/motdotla/carve">carve</a> - for doing the operating system level conversion of PDF to PNGs.</li>
+  <li><a href="http://github.com/motdotla/heroku-buildpack-mupdf">heroku-buildpack-mupdf</a> - for installing the conversion tool mudraw.</li>
+  <li><a href="http://github.com/motdotla/mupdf-binary">mupdf-binary</a> - for installing onto Heroku's servers.</li>
+  <li><a href="http://www.iron.io/mq">IronMQ</a> - for data and queue management.</li>
+</ul>
+
+<hr/>
+
+<h5>Similar Projects</h5>
+
+<ul>
+  <li><a href="signature.html">Signature.io</a></li>
+</ul>
