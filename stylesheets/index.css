@@ -1,1 +1,22 @@
-/* implement */
+body, html {
+  height:100%
+}
+
+/* page-component */
+table.page-component {
+  margin: 0 auto;
+  height: 100%;
+}
+
+table.page-component td {
+  padding: 12px;
+}
+
+/* letterhead-component */
+.letterhead-component {
+  text-align: center;
+}
+
+.letterhead-component img {
+  width: 10rem;
+}
