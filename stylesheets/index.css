@@ -40,8 +40,8 @@ table.page-component {
 
 table.page-component td {
   padding: 2.0rem;
-  padding-right: 10.0rem;
-  padding-left: 8.0rem;
+  padding-right: 8rem;
+  padding-left: 8rem;
 }
 
 /* letterhead-component */
