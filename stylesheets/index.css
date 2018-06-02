@@ -19,12 +19,15 @@ body {
   background: #EBE5D9;
   background: #FFFFFF;
   padding: 1rem;
-  border-top: 3px solid #222222;
   border-top: 3px solid #FDDFC4;
 }
 
 .underline {
   text-decoration: underline;
+}
+
+.text-center {
+  text-align: center;
 }
 
 p {
