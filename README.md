@@ -1,6 +1,6 @@
-# mot.la
+# scottmotte.com
 
-The source code for [http://mot.la](http://mot.la)
+The source code for [http://scottmotte.com](http://scottmotte.com)
 
 ## Development Setup
 
