@@ -1,103 +1,44 @@
-@font-face {
-  font-family: Duo;
-  src: url(/assets/fonts/iAWriterDuoS-Regular.woff2) format('woff2'),
-       url(/assets/fonts/iAWriterDuoS-Regular.woff) format('woff');
+html, body {
+  font-family: Georgia, serif;
+  /*font-family: Duo, monospace;*/
+  font-size: 62.5%; /* 10px when default is 16px for user's browser */
+
+  background: #ffffff;
+  color: #2d2d2d;
+  text-align: center;
 }
 
-body, html {
-  height: 100%;
-  color: #2C3C45;
-  font-size: 16px;
+p  {
+  font-size: 1.8rem;
+  line-height: 3.6rem; /* 1.8 * 2 */
 }
 
-html {
-  -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased;
-  overflow-x: hidden;
+.container {
+  max-width: 50rem;
+  margin: 0 auto;
+  text-align: left;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
-body {
-  font-family: Duo, monospace;
-  font-size: 1rem;
-  line-height: 1rem;
-  margin: 0;
-  background: #EBE5D9;
-  background: #FFFFFF;
-  padding: 1rem;
-  border-top: 3px solid #FDDFC4;
+.signature {
+  width: 20rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
-.underline {
-  text-decoration: underline;
+.crest {
+  width: 4rem;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  opacity: 0.1;
 }
 
 .text-center {
   text-align: center;
 }
 
-p {
-  line-height: 2.0rem;
+.text-right {
+  text-align: right;
 }
-
-li {
-  line-height: 1.5rem;
-}
-
-.headshot-component {
-  margin: 0 auto;
-  text-align: center;
-}
-
-/* page-component */
-table.page-component {
-  /*border: 1px solid #2C3C45;*/
-  margin: 0 auto;
-  height: 100%;
-  background: #fff;
-}
-
-table.page-component td {
-  padding: 2.0rem;
-  padding-right: 8rem;
-  padding-left: 8rem;
-}
-
-/* letterhead-component */
-.letterhead-component {
-  text-align: center;
-}
-
-.letterhead-component img {
-  width: 14rem;
-}
-
-.wheat-component {
-  margin: 0 auto;
-  width: 80px;
-}
-
-@page {
-  size: A4;
-  margin: 0;
-}
-
-@media print {
-  html, body {
-    width: 210mm;
-    height: 297mm;
-  }
-
-  body {
-    border-top: none;
-  }
-
-  footer {
-    position: absolute;
-    right: 0;
-    bottom: 25mm;
-    left: 0;
-    text-align: center;
-  }
-}
-
-

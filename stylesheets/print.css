@@ -1,0 +1,57 @@
+html, body {
+  font-family: Georgia, serif;
+  font-size: 62.5%; /* 10px when default is 16px for user's browser */
+
+  color: #2d2d2d;
+  text-align: center;
+}
+
+table.page-component {
+  margin: 0 auto;
+  height: 100%;
+  background: #fff;
+}
+
+table.page-component td {
+  padding: 2.0rem;
+  padding-right: 8rem;
+  padding-left: 8rem;
+}
+
+.letterhead-component {
+  text-align: center;
+}
+
+.letterhead-component img {
+  width: 20rem;
+}
+
+.wheat-component {
+  margin: 0 auto;
+  width: 4rem;
+  opacity: 0.4;
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  html, body {
+    width: 210mm;
+    height: 297mm;
+  }
+
+  body {
+    border-top: none;
+  }
+
+  footer {
+    position: absolute;
+    right: 0;
+    bottom: 25mm;
+    left: 0;
+    text-align: center;
+  }
+}
